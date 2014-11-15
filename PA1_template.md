@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -22,7 +27,7 @@ This histogram shows total number of steps taken per day.
 hist(totals$steps, main="Histogram of number of steps per day", xlab="Number of steps a day")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](./figures/unnamed-chunk-3-1.png) 
 
 Lets calculate mean for the total number of steps...
 
@@ -59,7 +64,7 @@ Now we can plot average number of steps taken per interval.
 plot.ts(x=intervalMeans$interval, y=intervalMeans$steps, type = "l", main="Average number of steps taken per time interval", xlab="Time interval", ylab="Average number of steps")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](./figures/unnamed-chunk-7-1.png) 
 
 You can see on a graph that there is a clear maximum for one of the intervals. Lets find that interval.
 
@@ -100,7 +105,7 @@ newTotals <- aggregate(steps ~ date, data=newActivity, FUN=sum)
 hist(newTotals$steps, main="Histogram of number of steps per day, corrected for missing values", xlab="Number of steps a day")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![plot of chunk unnamed-chunk-11](./figures/unnamed-chunk-11-1.png) 
 
 We can also calculate mean and median values for the new dataset and compare them against mean and median for the old (uncorrected for NAs) dataset.
 
@@ -135,6 +140,6 @@ plot.ts(x=newIntervalMeansWeekend$interval, y=newIntervalMeansWeekend$steps, typ
 plot.ts(x=newIntervalMeansWeekend$interval, y=newIntervalMeansWeekday$steps, type = "l", main="Average number of steps taken per time interval on weekdays", xlab="Time interval", ylab="Average number of steps")
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
+![plot of chunk unnamed-chunk-13](./figures/unnamed-chunk-13-1.png) 
 
 As you can see on graphs above, a test subject started and finished moving earlier on weekdays, than on weekend. At the same time there was more activity overall on weekends.
