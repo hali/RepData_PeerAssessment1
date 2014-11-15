@@ -93,3 +93,5 @@ par(mfrow=c(2,1))
 plot.ts(x=newIntervalMeansWeekend$interval, y=newIntervalMeansWeekend$steps, type = "l", main="Average number of steps taken per time interval on weekends", xlab="Time interval", ylab="Average number of steps")
 plot.ts(x=newIntervalMeansWeekend$interval, y=newIntervalMeansWeekday$steps, type = "l", main="Average number of steps taken per time interval on weekdays", xlab="Time interval", ylab="Average number of steps")
 ```
+
+As you can see on graphs above, a test subject started and finished moving earlier on weekdays, than on weekend. At the same time there was more activity overall on weekends.
